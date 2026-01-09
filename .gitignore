@@ -1,0 +1,15 @@
+# ===== React / Node =====
+node_modules/
+dist/
+
+# ===== Spring Boot / Maven =====
+target/
+*.class
+*.log
+
+# ===== IDE =====
+.vscode/
+.idea/
+
+# ===== OS =====
+.DS_Store

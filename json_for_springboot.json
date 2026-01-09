@@ -1,0 +1,88 @@
+{
+    "project": "Employee Management System",
+    "version": "1.0",
+    "description": "API Contract between React Frontend and Spring Boot Backend",
+    "baseUrl": "http://localhost:8080/api/v1",
+    "endpoints": {
+        "employees": {
+            "GET /employees": {
+                "description": "Fetch all employees",
+                "response": [
+                    {
+                        "id": 1704067200000,
+                        "employeeId": "EMP001",
+                        "name": "John Doe",
+                        "role": "Software Engineer",
+                        "department": "Engineering",
+                        "salary": 85000,
+                        "pin": "1234"
+                    }
+                ]
+            },
+            "POST /employees": {
+                "description": "Add a new employee",
+                "request": {
+                    "employeeId": "EMP002",
+                    "name": "Jane Smith",
+                    "role": "HR Manager",
+                    "department": "HR",
+                    "salary": 75000,
+                    "pin": "5678"
+                },
+                "response": {
+                    "success": true,
+                    "message": "Employee added successfully",
+                    "data": {
+                        "id": 1704067200001
+                    }
+                }
+            }
+        },
+        "attendance": {
+            "POST /attendance/mark": {
+                "description": "Clock In or Out",
+                "request": {
+                    "empId": 1704067200000,
+                    "action": "IN",
+                    "timestamp": "2024-01-08T09:30:00.000Z",
+                    "location": {
+                        "latitude": 12.966289,
+                        "longitude": 77.713800
+                    },
+                    "status": "On Time"
+                },
+                "response": {
+                    "success": true,
+                    "message": "Clocked In successfully"
+                }
+            },
+            "GET /attendance/history": {
+                "description": "Get attendance logs",
+                "response": [
+                    {
+                        "id": 556677,
+                        "empId": 1704067200000,
+                        "name": "John Doe",
+                        "action": "IN",
+                        "timestamp": "2024-01-08T09:30:00.000Z",
+                        "status": "On Time"
+                    }
+                ]
+            }
+        },
+        "leaves": {
+            "POST /leaves/request": {
+                "description": "Submit a leave request",
+                "request": {
+                    "empId": 1704067200000,
+                    "date": "2024-01-20",
+                    "reason": "Personal Appointment"
+                },
+                "response": {
+                    "success": true,
+                    "id": 998877
+                }
+            }
+        }
+    }
+}
