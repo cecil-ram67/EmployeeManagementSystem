@@ -1,50 +1,146 @@
-# 📍 Geo-Fenced Smart Employee Management System
+👔 Employee Management System
 
-## 🎓 Project Overview
-This is a comprehensive **Employee Management System** designed to modernize workforce tracking. It leverages **Geolocation (GPS)** to ensure employees can only clock in when they are physically present at the office. The system also includes advanced security features like **PIN Verification** to prevent proxy attendance ("buddy punching") and administrative tools for payroll and shift management.
+A full-stack Employee Management System built using Spring Boot (Backend) and React (Frontend).
+This application helps organizations manage employees, attendance, leave requests, and basic admin analytics.
 
-## 🚀 Key Features
+🧑‍💻 Tech Stack
+Backend (Spring Boot)
 
-### 1. 🌍 Geo-Fenced Attendance
--   **Problem**: Employees clocking in from home or outside the office.
--   **Solution**: The system calculates the distance between the employee's device and the office coordinates (`locationConfig.js`). Clock-in is blocked if the distance > 100 meters.
+Java
 
-### 2. 🔐 Anti-Buddy Punching (Security)
--   **Problem**: One employee marking attendance for another.
--   **Solution**: **PIN Verification**. Every employee has a unique 4-digit PIN. To Clock In/Out, the specific PIN must be entered.
+Spring Boot
 
-### 3. ⏰ Shift Management & Late Marking
--   **Logic**: Office starts at 09:30 AM (configurable).
--   **Visual**: If an employee clocks in after the 15-minute grace period, they are automatically marked as **LATE** (Red Badge).
+Spring Data JPA
 
-### 4. 🗺️ Visual Analytics
--   **Live Map**: An interactive map (using Leaflet) shows the exact location of every check-in relative to the office zone.
--   **Dashboard**: Real-time stats on total salary, active employees, and leave requests.
+REST APIs
 
-### 5. 📄 Payroll & Reports
--   **Payslips**: Auto-generates professional PDF payslips with tax breakdowns.
--   **Exports**: One-click CSV export for "End of Day" reports.
+Maven
 
----
+MySQL / H2 (configurable)
 
-## 🛠️ Technology Stack
--   **Frontend**: React.js (Vite)
--   **Styling**: CSS Modules / Lucide Icons
--   **Maps**: React Leaflet / OpenStreetMap
--   **PDF Generation**: jsPDF
--   **State Management**: React Hooks + LocalStorage (Prototyping)
+Frontend (React)
 
----
+React (Vite)
 
-## 📸 How to Run
-1.  **Install Dependencies**:
-    ```bash
-    npm install
-    ```
-2.  **Start Server**:
-    ```bash
-    npm run dev
-    ```
-3.  **Access**:
-    -   **Admin Dashboard**: `/admin`
-    -   **Employee Portal**: `/portal`
+JavaScript (ES6+)
+
+HTML5, CSS3
+
+Axios (API communication)
+
+Component-based architecture
+
+📁 Project Structure
+EmployeeManagementSystem/
+│
+├── backend/                  # Spring Boot Backend
+│   ├── src/main/java
+│   │   └── com/ferilion/employeemanagement
+│   │       ├── controller
+│   │       ├── service
+│   │       ├── repository
+│   │       └── model
+│   ├── src/main/resources
+│   │   └── application.properties
+│   └── pom.xml
+│
+├── src/                      # React Frontend
+│   ├── components
+│   ├── pages
+│   ├── services
+│   ├── config
+│   └── assets
+│
+├── public/
+├── package.json
+├── vite.config.js
+├── README.md
+└── .gitignore
+
+✨ Features
+-> Employee Module
+
+Add, update, delete employees
+
+View employee details
+
+-> Attendance Module
+
+Mark employee attendance
+
+Track attendance records
+
+-> Leave Management
+
+Apply for leave
+
+Approve / reject leave requests
+
+-> Admin Dashboard (Frontend)
+
+Employee statistics
+
+Attendance analytics
+
+Live operational views
+
+⚙️ How to Run the Project
+🔹 Backend (Spring Boot)
+
+Go to backend folder:
+
+cd backend
+
+
+Run the application:
+
+mvn spring-boot:run
+
+
+Backend will start at:
+
+http://localhost:8080
+
+🔹 Frontend (React)
+
+Go to project root:
+
+npm install
+
+
+Start React app:
+
+npm run dev
+
+
+Frontend will run at:
+
+http://localhost:5173
+
+🔗 API Overview (Sample)
+Method	Endpoint	Description
+GET	/employees	Get all employees
+POST	/employees	Add new employee
+GET	/attendance	View attendance
+POST	/leave/apply	Apply leave
+PUT	/leave/approve	Approve leave
+🛠️ Future Enhancements
+
+🔐 JWT Authentication & Role-based access
+
+🗄️ Production Database (MySQL/PostgreSQL)
+
+📦 Docker support
+
+☁️ Cloud deployment (AWS / Render)
+
+📱 Mobile-friendly UI
+
+👨‍💻 Author
+
+Ram (Cecil-ram67)
+GitHub: https://github.com/cecil-ram67
+
+⭐ Support
+
+If you like this project, don’t forget to star ⭐ the repository!
